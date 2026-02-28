@@ -1,9 +1,11 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'My Blog',
-  description: 'A beautiful blog powered by WordPress and Next.js',
+  title: 'Umar Dev | Portfolio',
+  description: 'Modern developer portfolio and blog powered by Next.js and WordPress.',
 };
 
 export default function RootLayout({
@@ -13,35 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
-
-        {/* ───── HEADER ───── */}
-        <header className="bg-blue-700 text-white shadow-lg">
-          <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            {/* Site Logo/Name */}
-            <a href="/" className="text-2xl font-bold tracking-tight hover:opacity-80">
-              UMAR DEV
-            </a>
-
-            {/* Navigation Links */}
-            <nav className="flex gap-6 text-sm font-medium">
-              <a href="/" className="hover:underline underline-offset-4">Home</a>
-              <a href="/blog" className="hover:underline underline-offset-4">Blog</a>
-              <a href="/about" className="hover:underline underline-offset-4">About</a>
-            </nav>
-          </div>
-        </header>
-
-        {/* ───── PAGE CONTENT ───── */}
-        <main className="flex-1 max-w-5xl mx-auto w-full px-6 py-10">
-          {children}
-        </main>
-
-        {/* ───── FOOTER ───── */}
-        <footer className="bg-gray-800 text-gray-300 text-center py-6 text-sm">
-          <p>© {new Date().getFullYear()} Umar Dev · Built with Next.js + WordPress</p>
-        </footer>
-
+      <body className="m-0 flex min-h-screen flex-col bg-[radial-gradient(circle_at_18%_12%,rgba(75,125,255,0.18),transparent_40%),radial-gradient(circle_at_82%_-10%,rgba(55,89,182,0.2),transparent_34%),linear-gradient(180deg,#0f1e48_0%,#050b1f_56%,#030713_100%)] text-[#e6edff]">
+        <Header />
+        <main className="mx-auto w-[min(1100px,92vw)] flex-1 py-[clamp(2.25rem,4vw,3.4rem)]">{children}</main>
+        <Footer />
       </body>
     </html>
   );

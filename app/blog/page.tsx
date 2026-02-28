@@ -1,13 +1,13 @@
-﻿import { getAllPosts, WPPost } from '../lib/wordpress';
-import Link from 'next/link';
+﻿import Link from 'next/link';
+import { getAllPosts, WPPost } from '../../lib/wordpress';
 
-export default async function HomePage() {
+export default async function BlogPage() {
   const posts = await getAllPosts();
 
   return (
     <div>
-      <h1 className="mb-2 text-4xl font-semibold tracking-tight text-slate-100 md:text-5xl">Latest Posts</h1>
-      <p className="mb-10 text-base text-slate-300">Fresh thoughts, ideas, and stories.</p>
+      <h1 className="mb-2 text-4xl font-semibold tracking-tight text-slate-100 md:text-5xl">Blog</h1>
+      <p className="mb-10 text-base text-slate-300">All posts from WordPress.</p>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {posts.map((post: WPPost) => (
